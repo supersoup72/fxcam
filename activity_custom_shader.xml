@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_dark">
+
+    <android.opengl.GLSurfaceView
+        android:id="@+id/customGlSurface"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/bg_dark" />
+
+    <!-- Editor toolbar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:orientation="horizontal"
+        android:background="@color/surface"
+        android:gravity="center_vertical"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="fragment.glsl"
+            android:textColor="@color/accent"
+            android:textSize="13sp"
+            android:fontFamily="monospace" />
+
+        <Button
+            android:id="@+id/templateBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="TEMPLATE"
+            android:textSize="11sp"
+            android:backgroundTint="@color/bg_mid"
+            android:textColor="@color/text_secondary" />
+
+        <Button
+            android:id="@+id/applyShaderBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="▶  RUN"
+            android:textSize="11sp"
+            android:backgroundTint="@color/accent"
+            android:textColor="@android:color/black"
+            android:layout_marginStart="6dp" />
+    </LinearLayout>
+
+    <!-- Code editor -->
+    <EditText
+        android:id="@+id/shaderEditor"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/code_bg"
+        android:textColor="@color/code_text"
+        android:textSize="12sp"
+        android:fontFamily="monospace"
+        android:padding="12dp"
+        android:gravity="top|start"
+        android:inputType="textMultiLine|textNoSuggestions"
+        android:scrollbars="vertical"
+        android:overScrollMode="always" />
+
+    <!-- Error bar -->
+    <LinearLayout
+        android:id="@+id/errorBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/error_bg"
+        android:padding="10dp"
+        android:minHeight="44dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚠ COMPILE ERROR"
+            android:textColor="@color/error_text"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/errorConsole"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/error_text"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:paddingTop="4dp" />
+    </LinearLayout>
+
+</LinearLayout>

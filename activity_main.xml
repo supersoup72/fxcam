@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_dark">
+
+    <!-- Toolbar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:background="@color/surface">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="FX CAM"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:letterSpacing="0.1" />
+
+        <ImageButton
+            android:id="@+id/loadMediaBtn"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:src="@android:drawable/ic_menu_gallery"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="@color/text_primary"
+            android:contentDescription="Load media" />
+
+        <ImageButton
+            android:id="@+id/settingsBtn"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:src="@android:drawable/ic_menu_preferences"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="@color/text_primary"
+            android:contentDescription="Settings" />
+    </LinearLayout>
+
+    <!-- Preview -->
+    <android.opengl.GLSurfaceView
+        android:id="@+id/glSurface"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/bg_dark" />
+
+    <!-- Effect chips row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/surface"
+        android:paddingTop="8dp"
+        android:paddingBottom="4dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EFFECTS  •  tap to select  •  long-press to toggle  •  drag ≡ to reorder"
+            android:textSize="10sp"
+            android:textColor="@color/text_secondary"
+            android:paddingStart="12dp"
+            android:paddingBottom="6dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chipRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:clipToPadding="false"
+            android:orientation="horizontal" />
+    </LinearLayout>
+
+    <!-- Param sliders -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:orientation="vertical"
+        android:background="@color/bg_mid">
+
+        <TextView
+            android:id="@+id/noEffectHint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Select an effect above to adjust parameters"
+            android:gravity="center"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp"
+            android:visibility="visible" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/paramRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="4dp"
+            android:clipToPadding="false"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- Mode tabs -->
+    <RadioGroup
+        android:id="@+id/modeTabGroup"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:background="@color/surface"
+        android:gravity="center">
+
+        <RadioButton
+            android:id="@+id/tabPhoto"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="📷 PHOTO"
+            android:textSize="11sp"
+            android:gravity="center"
+            android:button="@null"
+            android:checked="true"
+            android:textColor="@color/tab_selector" />
+
+        <RadioButton
+            android:id="@+id/tabVideo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="🎬 VIDEO"
+            android:textSize="11sp"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/tab_selector" />
+
+        <RadioButton
+            android:id="@+id/tabLive"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="📹 LIVE"
+            android:textSize="11sp"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@color/tab_selector" />
+    </RadioGroup>
+
+    <!-- Render button -->
+    <Button
+        android:id="@+id/renderBtn"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="📷  CAPTURE"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/accent"
+        android:textColor="@android:color/black"
+        android:letterSpacing="0.05" />
+
+</LinearLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="52dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_marginEnd="6dp"
+    android:paddingStart="10dp"
+    android:paddingEnd="4dp"
+    android:background="@drawable/chip_normal"
+    android:minWidth="72dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/chipLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold"
+            android:maxLines="1" />
+
+        <TextView
+            android:id="@+id/chipCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="● ON"
+            android:textSize="9sp"
+            android:textColor="@color/accent"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/chipDrag"
+        android:layout_width="24dp"
+        android:layout_height="match_parent"
+        android:text="≡"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textColor="@color/text_secondary"
+        android:paddingStart="6dp" />
+
+</LinearLayout>

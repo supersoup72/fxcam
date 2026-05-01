@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_dark">#0F0F0F</color>
+    <color name="bg_mid">#1A1A1A</color>
+    <color name="surface">#222222</color>
+    <color name="accent">#00E5A0</color>
+    <color name="text_primary">#EEEEEE</color>
+    <color name="text_secondary">#888888</color>
+    <color name="code_bg">#111111</color>
+    <color name="code_text">#C8E6C9</color>
+    <color name="error_bg">#2A0000</color>
+    <color name="error_text">#FF6B6B</color>
+    <color name="chip_normal_bg">#2C2C2C</color>
+    <color name="chip_selected_bg">#1A3D2E</color>
+</resources>
